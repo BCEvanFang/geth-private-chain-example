@@ -125,6 +125,9 @@ personal.unlockAccount(eth.accounts[0])
 # 交易(帳號0給帳號1，3個ether)
 eth.sendTransaction({from:eth.accounts[0],to:eth.accounts[1],value:web3.toWei(3,"ether")})
 
+# 查詢交易收據(因交易尚未獲得確認，故此時應為null)
+eth.getTransactionReceipt('0x61c248c339399397a91b1924b02f9d8971889f097483638ad6fc5c51e5f62933')
+
 # 查詢交易狀況
 txpool.status
 ```
@@ -144,7 +147,10 @@ txpool.status
 eth.getBalance(eth.accounts[1])
 
 # 查詢 transaction (需自行替換位址)
-eth.getTransaction("0x4ea2f0a3d30f5cb7eeb7e80ddb8ae5041d3b6aace7dbd6f02f48deff511b1a4a")
+eth.getTransaction("0x61c248c339399397a91b1924b02f9d8971889f097483638ad6fc5c51e5f62933")
+
+# 查詢交易收據
+eth.getTransactionReceipt('0x61c248c339399397a91b1924b02f9d8971889f097483638ad6fc5c51e5f62933')
 ```
 
 
